@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='./style/spinner.css' />
+    <link rel="stylesheet" href="./style/company_profile.css" />
+</head>
+<body>
+    <div class='wrapper' id='loadingWrapper'>
+        <div class="lds-dual-ring" id='mainSpinner'></div>
+    </div>
+    <div class='wrapper' id='mainWrapper'>
+        <div class='company-card'>
+            <div class='company-headline'>
+                <img id='companyImg'>
+                <div class='company-summary'>
+                    <div class='name-line'>
+                        <h1 id='companyName'></h1>
+                        <h4 id='companySymbol'></h4>
+                    </div>
+                    <button><a id='companySite'></a></button>
+                </div>      
+            </div>
+            <div class='company-details'>
+                <div class='details-left'>
+                    <div class='company-performance'>
+                        <h2 id='companyPrice'></h2>
+                        <h2 id='companyChangePercent'></h2>
+                    </div>
+                    <p id='companyDesc'></p>
+                </div>
+                <div class='details-right'>
+                    <div class='company-history-header'>
+                        <h3>History</h3>
+                    </div>
+                    <div class='company-graph'>
+                        <canvas id="chart" width="200" height="120"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+<script src='./js/company.js'></script>
+</html>

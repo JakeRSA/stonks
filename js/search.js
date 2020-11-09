@@ -18,9 +18,8 @@ async function getResults(searchTerm) {
 function resultsToList(results) {
     for (let result of results) {
         let resultLI = document.createElement('LI');
-        // resultLI.innerText = result.name + ' (' + result.symbol +')';
         resultLI.innerHTML = 
-        `<a href="/company.html?symbol=${result.symbol}">
+        `<a href="./company.html?symbol=${result.symbol}">
         ${result.name} (${result.symbol})
         </a>`;
         resultLI.classList += 'result';
