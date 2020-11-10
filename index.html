@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finworld</title>
+    <link rel="shortcut icon" type="image/jpg" href='./images/favicon.ico' />
     <link rel="stylesheet" href='./style/spinner.css' />
     <link rel="stylesheet" href='./style/main_style.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <div class=topbar>
+        <div class='ticker'>
+            <ul class='ticker-items' id='tickerItems'></ul>
+        </div>
+    </div>
     <div class='wrapper'>
-        <h1 class='index-header'>Stock Search</h1>
-            <div class='search-wrapper'>
-                <form class='search-form' id='search-form'>
-                    <label for='stock-symbol'>Stock symbol: </label>
-                    <input placeholder="Stock symbol" id='stock-symbol' name='stock-symbol' autocomplete="off">
-                    <button type="submit" id="search-btn">Search</button>
-                    <div class="lds-dual-ring"></div>
-                </form>
-                <div class='results-dropdown'>
-                    <ul id='results-list'></ul>
-                </div>
+        <h1 class='index-header'>stock search</h1>
+        <div class='search-wrapper'>
+            <form class='search-form' id='search-form'>
+                <label for='stock-symbol'>Stock symbol: </label>
+                <input placeholder="Stock symbol" id='stock-symbol' name='stock-symbol' autocomplete="off">
+                <button type="submit" id="search-btn">Search</button>
+                <div class="lds-dual-ring"></div>
+            </form>
+            <div class='results-dropdown'>
+                <ul id='results-list'></ul>
             </div>
+        </div>
     </div>
 </body>
 <script src='./js/search.js'></script>
+<script src='./js/ticker.js'></script>
+
 </html>

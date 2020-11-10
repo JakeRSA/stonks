@@ -2,7 +2,9 @@
     font-family: 'Heebo', sans-serif;
 }
 
-html, body, .wrapper {
+html,
+body,
+.wrapper {
     height: 100%;
     width: 100%;
     margin: 0;
@@ -10,7 +12,7 @@ html, body, .wrapper {
 }
 
 .wrapper {
-    background-color: #030301;  
+    background-color: #030301;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,11 +24,11 @@ html, body, .wrapper {
     flex-direction: column;
     width: 845px;
     height: 75vh;
-    
+
 }
 
 .company-headline {
-    flex-basis:30%;
+    flex-basis: 30%;
     display: flex;
     align-items: center;
     background-color: white;
@@ -59,7 +61,7 @@ html, body, .wrapper {
     background-color: #030301;
     color: #fff5f6;
     padding: 0.5em;
-    border:2px solid  #5ae2d0;
+    border: 2px solid #5ae2d0;
     margin: 0;
     margin-left: 1em;
 }
@@ -101,7 +103,7 @@ a {
     display: flex;
     padding-left: 2em;
     align-items: baseline;
-    border-bottom: 1px solid ;
+    border-bottom: 1px solid;
 }
 
 .company-performance h2 {
@@ -145,16 +147,16 @@ h3 {
 
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
     background: #f1f1f1;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background: #00D9C0;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+::-webkit-scrollbar-thumb:hover {
     background: #32ffe7;
-  }
+}

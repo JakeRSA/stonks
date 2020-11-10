@@ -39,8 +39,8 @@ async function companyProfile(symbol) {
     } else {
         changeElem.style.color = 'rgb(255, 75, 105)';
     }
-    descElem.innerText = profile.description  
-    
+    descElem.innerText = profile.description
+
 }
 
 async function companyHistory(symbol) {
@@ -69,16 +69,16 @@ companyHistory(symbol).then((data) => {
         data: {
             labels: data[0],
             datasets: [{
-                    data: data[1],
-                    lineTension: 0,
-                    pointRadius: 0,
-                    borderCapStyle: 'round',
-                    backgroundColor: 'rgba(0, 217, 192, 1)',
-                    borderColor: 'rgba(0, 217, 192, 1)',
-                    hoverBackgroundColor: 'rgba(255, 217, 192, 1)',
-                    label: 'Price'
+                data: data[1],
+                lineTension: 0,
+                pointRadius: 0,
+                borderCapStyle: 'round',
+                backgroundColor: 'rgba(0, 217, 192, 1)',
+                borderColor: 'rgba(0, 217, 192, 1)',
+                hoverBackgroundColor: 'rgba(255, 217, 192, 1)',
+                label: 'Price'
 
-                }]
+            }]
         },
         options: {
             legend: {
@@ -90,12 +90,12 @@ companyHistory(symbol).then((data) => {
             },
             scales: {
                 xAxes: [{
-                  gridLines: {
-                      display: false
-                  },
-                  ticks: {
-                      autoSkipPadding: 20
-                  }  
+                    gridLines: {
+                        display: false
+                    },
+                    ticks: {
+                        autoSkipPadding: 20
+                    }
                 }]
             }
         }
