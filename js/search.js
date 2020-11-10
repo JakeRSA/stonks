@@ -16,6 +16,9 @@ async function getResults(searchTerm) {
 }
 
 function resultsToList(results) {
+    if (!symbolInput.value) {
+        results = [];
+    }
     for (let result of results) {
         let resultLI = document.createElement('LI');
         resultLI.innerHTML = 
@@ -31,10 +34,31 @@ function clearResults() {
     resultsList.innerHTML = ''
 }
 
+const debounce = (func, delay) => {
+    let debounceTimer;
+    return function() {
+        const context = this;
+        const args = arguments;
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            func.apply(context, args)
+        }, delay)
+    }
+}
+
 searchForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     clearResults();
     let results = await getResults(symbolInput.value);
     resultsToList(results);
 })
+
+symbolInput.addEventListener('keyup', debounce(() => {
+    clearResults();
+    let results = getResults(symbolInput.value)
+    .then(results => {
+        resultsToList(results); 
+    })  
+}, 800)
+)
 
