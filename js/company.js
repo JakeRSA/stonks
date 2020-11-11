@@ -32,7 +32,7 @@ async function companyProfile(symbol) {
     websiteElem.innerText = profile.website;
     websiteElem.href = profile.website;
     imgElem.src = profile.image;
-    priceElem.innerText = '$' + profile.price;
+    priceElem.innerText = '$' + profile.price.toFixed(2);
     changeElem.innerText = profile.changesPercentage.slice(1, profile.changesPercentage.length - 1);
     if (profile.changesPercentage[1] === '+') {
         changeElem.style.color = 'rgb(89, 255, 117)';
