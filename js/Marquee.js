@@ -1,3 +1,5 @@
+const finServer = 'https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/';
+
 class Marquee {
 
     constructor(container) {

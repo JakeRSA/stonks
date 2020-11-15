@@ -16,24 +16,23 @@
     <div id='marquee'></div>
     <div class='wrapper'>
         <h1 class='index-header'>stock search</h1>
-        <div class='search-wrapper'>
-            <form class='search-form' id='search-form'>
-                <label for='stock-symbol'>Stock symbol: </label>
-                <input placeholder="Stock symbol" id='stock-symbol' name='stock-symbol' autocomplete="off">
-                <button type="submit" id="search-btn">Search</button>
-                <div class="lds-dual-ring"></div>
-            </form>
-            <div class='results-dropdown'>
-                <ul id='results-list'></ul>
-            </div>
+        <div class='search-wrapper' id='searchWrapper'>
         </div>
     </div>
 </body>
-<script src='./js/search.js'></script>
 <script src='./js/Marquee.js'></script>
+<script src='./js/searchForm.js'></script>
+<script src='./js/searchResult.js'></script>
+
 <script>
     const marquee = new Marquee(document.getElementById('marquee'));
-    marquee.load();   
+    marquee.load();
+    const form = new SearchForm(document.getElementById('searchWrapper'));
+    let formResults = new SearchResult(document.getElementById('searchWrapper'));
+
+    form.onSearch((companies) => {
+        formResults.listResults(companies);
+    })
 </script>
 
 </html>
