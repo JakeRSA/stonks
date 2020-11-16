@@ -6,7 +6,7 @@ html {
     height: 100%;
     width: 100%;
     background-color: rgb(223, 223, 223);
-    background-image: linear-gradient(rgb(223, 223, 223),  rgb(187, 162, 162))
+    background-image: linear-gradient(rgb(223, 223, 223), rgb(187, 162, 162))
 }
 
 body {
@@ -134,8 +134,8 @@ label {
     display: none;
 }
 
-input,
-button {
+form input,
+form button {
     border: none;
     outline: none;
     background: none;
@@ -168,24 +168,39 @@ ul {
 
 .result {
     width: 80%;
-    padding: 20px 0 20px 0;
     border-top: 0.5px solid gainsboro;
     border-bottom: 0.5px solid gainsboro;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.result-body {
+    margin: 0;
+    padding: 20px 0 20px 0;
+    display: flex;
+    align-items: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 95%;
+
 }
 
 .result * {
     margin-right: 5px;
-    display: inline;
     text-decoration: none;
     color: #00D9C0;
 }
 
 .result img {
     height: 1em;
+}
+
+.result a,
+.result p {
+    /* padding: 20px 0 20px 0; */
+    display: inline;
 }
 
 .result-increase {
@@ -205,6 +220,24 @@ ul {
     background-color: #ffffbc;
     margin: 0;
     padding: 0;
+}
+
+.compare-btn {
+    background-color: rgb(218, 25, 57);
+    border: 2px solid rgb(151, 135, 135);
+    border-radius: 5px;
+    margin-left: 5px;
+    color: rgb(255, 255, 144);
+    font-weight: 500;
+    float: right;
+}
+
+.compare-btn:hover {
+    cursor: pointer;
+    border: none;
+    padding: 3px 8px 3px 8px;
+    background-color: rgb(255, 85, 113);
+    font-weight: 600;
 }
 
 .invisible {
