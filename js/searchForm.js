@@ -3,11 +3,6 @@ class SearchForm {
     constructor(container) {
         this.container = container;
         this.createHtmlForm();
-
-        this.formElem.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.search(this.input.value);
-        })
     }
 
     searchDebounce = (func, delay) => {
@@ -79,5 +74,10 @@ class SearchForm {
             let data = await this.search(this.input.value);
             callback(data);
         }, 800))
-    }
+        this.formElem.addEventListener('submit',async e => {
+            e.preventDefault();
+            let data = await this.search(this.input.value);
+            callback(data);
+        })
+    }    
 }

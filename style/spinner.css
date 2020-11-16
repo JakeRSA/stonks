@@ -1,7 +1,6 @@
 /* adapted from loading.io */
 
 .lds-dual-ring {
-  display: inline-block;
   float: right;
   margin: 0;
   padding: 0;
@@ -13,7 +12,6 @@
   display: block;
   width: 1.5em;
   height: 1.5em;
-  /* margin: 8px; */
   border-radius: 50%;
   border: 3px solid white;
   border-color: #00D9C0 transparent #FF4365 transparent;
