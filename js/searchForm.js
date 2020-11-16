@@ -74,10 +74,10 @@ class SearchForm {
             let data = await this.search(this.input.value);
             callback(data);
         }, 800))
-        this.formElem.addEventListener('submit',async e => {
+        this.formElem.addEventListener('submit', async e => {
             e.preventDefault();
             let data = await this.search(this.input.value);
             callback(data);
         })
-    }    
+    }
 }
