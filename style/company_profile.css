@@ -126,6 +126,14 @@ a {
     font-weight: 500;
 }
 
+.increase {
+    color: rgb(89, 255, 117);
+}
+
+.decrease {
+    color: rgb(255, 75, 105);
+}
+
 p {
     background-color: white;
     padding: 1em;

@@ -49,7 +49,7 @@ class SearchForm {
 
         // create spinner
         const spinner = document.createElement('DIV');
-        spinner.classList.add('lds-dual-ring');
+        spinner.classList.add('lds-dual-ring', 'invisible');
         this.spinner = spinner;
 
         //place all in page flow
@@ -58,16 +58,16 @@ class SearchForm {
     }
 
     async search(searchTerm) {
-        this.spinner.style.display = 'inline-block';
-        this.submitBtn.style.display = 'none';
+        this.spinner.classList.remove('invisible');
+        this.submitBtn.classList.add('invisible');
         let data;
         if (!searchTerm) data = [];
         else {
             let res = await fetch(finServer + `/api/v3/search?query=${searchTerm}&limit=10&exchange=NASDAQ`);
             data = await res.json();
         }
-        this.spinner.style.display = 'none';
-        this.submitBtn.style.display = 'inline';
+        this.spinner.classList.add('invisible');
+        this.submitBtn.classList.remove('invisible');
         return {
             data: data,
             searchTerm: searchTerm

@@ -15,16 +15,15 @@ const cardElems = document.querySelectorAll('#mainWrapper *');
 
 async function companyProfile(symbol) {
     for (elem of cardElems) {
-        elem.style.visibility = 'hidden';
+        elem.classList.add('invisible');
     }
-    mainSpinner.style.visibility = 'visible';
-    mainSpinner.style.display = 'inline';
+    mainSpinner.classList.remove('invisible');
     let res = await fetch(`${finServer}/api/v3/company/profile/${symbol}`);
     let data = await res.json();
-    mainSpinner.style.display = 'none';
+    mainSpinner.classList.add('invisible');
     loadingWrapper.remove();
     for (elem of cardElems) {
-        elem.style.visibility = 'visible';
+        elem.classList.remove('invisible');
     }
     let profile = data.profile;
     nameElem.innerText = profile.companyName;
@@ -35,9 +34,9 @@ async function companyProfile(symbol) {
     priceElem.innerText = '$' + profile.price.toFixed(2);
     changeElem.innerText = profile.changesPercentage.slice(1, profile.changesPercentage.length - 1);
     if (profile.changesPercentage[1] === '+') {
-        changeElem.style.color = 'rgb(89, 255, 117)';
+        changeElem.classList.add('increase');
     } else {
-        changeElem.style.color = 'rgb(255, 75, 105)';
+        changeElem.classList.add('decrease');
     }
     descElem.innerText = profile.description
 

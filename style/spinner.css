@@ -1,7 +1,7 @@
 /* adapted from loading.io */
 
 .lds-dual-ring {
-  display: none;
+  display: inline-block;
   float: right;
   margin: 0;
   padding: 0;

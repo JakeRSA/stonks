@@ -209,6 +209,11 @@ ul {
     padding: 0;
 }
 
+.invisible {
+    visibility: hidden;
+    display: none;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
 }
