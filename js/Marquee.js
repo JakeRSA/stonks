@@ -5,11 +5,11 @@ class Marquee {
     constructor(container) {
         this.container = container;
     }
-    
+
     async loadData() {
         let res = await fetch(`${finServer}/api/v3/stock/list`);
-        let data = await res.json();  
-        this.data = data;     
+        let data = await res.json();
+        this.data = data;
     }
 
     createEmptyTicker() {
@@ -19,7 +19,7 @@ class Marquee {
         tickerList.classList += 'ticker-items';
         this.container.append(ticker);
         ticker.append(tickerList);
-        return tickerList;      
+        return tickerList;
     }
 
     populateTicker(tickerList) {
@@ -39,7 +39,7 @@ class Marquee {
                 tickerItem.appendChild(itemPrice);
                 tickerList.append(tickerItem);
             }
-        }        
+        }
     }
 
     async load() {
@@ -48,4 +48,3 @@ class Marquee {
         this.populateTicker(tickerList);
     }
 }
-

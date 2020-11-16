@@ -51,7 +51,7 @@ class SearchResult {
         console.log(results.data);
         this.resultsList.innerHTML = '';
         this.resultsList.classList.remove('enable-scroll');
-        if (results.data.length < 1) return 1;           
+        if (results.data.length < 1) return 1;
 
         for (let result of results.data) {
             let resultLI = document.createElement('LI');
@@ -81,7 +81,9 @@ class SearchResult {
                 resultA.appendChild(resultPercent);
                 resultLI.appendChild(resultA);
                 this.resultsList.appendChild(resultLI);
-            } catch (e) {console.log(`Cannot load result: ${e}`)};
+            } catch (e) {
+                console.log(`Cannot load result: ${e}`)
+            };
         }
         if (results.data.length > 4) this.resultsList.classList.add('enable-scroll');
     }

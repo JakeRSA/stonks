@@ -12,7 +12,7 @@ body,
 }
 
 .wrapper {
-    background-color:  rgb(223, 223, 223);
+    background-color: rgb(223, 223, 223);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -147,7 +147,7 @@ h3 {
 .company-graph {
     margin-right: 1em;
     height: 200px;
-    margin-bottom:50px;
+    margin-bottom: 50px;
 }
 
 ::-webkit-scrollbar {

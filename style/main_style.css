@@ -126,7 +126,7 @@ input {
 
 #search-btn {
     flex-basis: 10%;
-    flex-grow:0;
+    flex-grow: 0;
     border-left: 2px inset #030301;
     font-weight: 600;
 
