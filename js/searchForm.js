@@ -35,7 +35,7 @@ class SearchForm {
         //create input element
         const input = document.createElement('INPUT');
         input.placeholder = 'Stock symbol or company name';
-        input.id = 'stock-symbol';
+        input.id = 'stockSymbol';
         input.name = 'stock-symbol';
         input.autocomplete = 'off';
         this.input = input;
@@ -43,7 +43,7 @@ class SearchForm {
         //create submit button
         const submitBtn = document.createElement('BUTTON');
         submitBtn.type = 'submit';
-        submitBtn.id = 'search-btn';
+        submitBtn.id = 'searchBtn';
         submitBtn.innerText = 'Search';
         this.submitBtn = submitBtn;
 

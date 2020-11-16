@@ -9,7 +9,7 @@ class SearchResult {
         this.dropdown = document.createElement('DIV');
         this.dropdown.classList += 'results-dropdown';
         this.resultsList = document.createElement('UL');
-        this.resultsList.id = 'results-list'
+        this.resultsList.id = 'resultsList'
         this.dropdown.append(this.resultsList);
         this.container.append(this.dropdown);
     }
