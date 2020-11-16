@@ -7,7 +7,7 @@ class SearchResult {
     createResultDropdown() {
 
         this.dropdown = document.createElement('DIV');
-        this.dropdown.classList += 'results-dropdown';
+        this.dropdown.classList.add('results-dropdown');
         this.resultsList = document.createElement('UL');
         this.resultsList.id = 'resultsList'
         this.dropdown.append(this.resultsList);
@@ -65,9 +65,9 @@ class SearchResult {
                 resultIMG.src = resultData.img;
                 resultPercent.innerText = resultData.percent;
                 if (resultData.percent[1] === '+') {
-                    resultPercent.classList += 'result-increase';
+                    resultPercent.classList.add('result-increase');
                 } else {
-                    resultPercent.classList += 'result-decrease';
+                    resultPercent.classList.add('result-decrease');
                 }
             });
             try {
@@ -75,7 +75,7 @@ class SearchResult {
                 let highlightName = this.highlightSearchTerm(result.name, results.searchTerm);
                 resultName.innerHTML = `${highlightSymbol} | ${highlightName}`;
 
-                resultLI.classList += 'result';
+                resultLI.classList.add('result');
                 resultA.appendChild(resultIMG);
                 resultA.appendChild(resultName);
                 resultA.appendChild(resultPercent);

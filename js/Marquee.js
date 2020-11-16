@@ -14,9 +14,9 @@ class Marquee {
 
     createEmptyTicker() {
         const ticker = document.createElement('DIV');
-        ticker.classList += 'ticker';
+        ticker.classList.add('ticker');
         const tickerList = document.createElement('UL');
-        tickerList.classList += 'ticker-items';
+        tickerList.classList.add('ticker-items');
         this.container.append(ticker);
         ticker.append(tickerList);
         return tickerList;
@@ -31,10 +31,10 @@ class Marquee {
                 let tickerItem = document.createElement('LI');
                 let itemSymbol = document.createElement('P');
                 itemSymbol.innerText = stock.symbol;
-                itemSymbol.classList += 'ticker-item-symbol';
+                itemSymbol.classList.add('ticker-item-symbol');
                 let itemPrice = document.createElement('P');
                 itemPrice.innerText = stock.price;
-                itemPrice.classList += 'ticker-item-price';
+                itemPrice.classList.add('ticker-item-price');
                 tickerItem.appendChild(itemSymbol);
                 tickerItem.appendChild(itemPrice);
                 tickerList.append(tickerItem);

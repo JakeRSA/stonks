@@ -24,7 +24,7 @@ class SearchForm {
 
     createHtmlForm() {
         const form = document.createElement('FORM');
-        form.classList += 'search-form';
+        form.classList.add('search-form');
         this.formElem = form;
 
         // create label for form input
@@ -49,7 +49,7 @@ class SearchForm {
 
         // create spinner
         const spinner = document.createElement('DIV');
-        spinner.classList += 'lds-dual-ring';
+        spinner.classList.add('lds-dual-ring');
         this.spinner = spinner;
 
         //place all in page flow
