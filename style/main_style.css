@@ -5,7 +5,7 @@
 html {
     height: 100%;
     width: 100%;
-    background-color: rgb(37, 37, 37);
+    background-color: rgb(223, 223, 223);
 }
 
 body {
@@ -92,7 +92,7 @@ body {
     align-items: center;
     background-color: ghostwhite;
     border-radius: 5px;
-    box-shadow: 0 0 20px 5px rgb(211, 211, 248);
+    box-shadow: 0 0 20px 5px rgb(209, 195, 207);
     z-index: 0;
 }
 
@@ -116,12 +116,20 @@ body {
 .search-form {
     width: 100%;
     font-family: 'Heebo', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    width: 80%;
 }
 
 #search-btn {
-    float: right;
+    flex-basis: 10%;
+    flex-grow:0;
     border-left: 2px inset #030301;
     font-weight: 600;
+
 }
 
 label {
@@ -154,6 +162,10 @@ ul {
     list-style-type: none;
     padding: 0;
     height: 90%;
+}
+
+.enable-scroll {
+    overflow-y: scroll;
 }
 
 .result {

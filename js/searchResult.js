@@ -48,9 +48,11 @@ class SearchResult {
     }
 
     listResults(results) {
+        console.log(results.data);
         this.resultsList.innerHTML = '';
+        this.resultsList.classList.remove('enable-scroll');
+        if (results.data.length < 1) return 1;           
 
-        if (!results.data) return 1;
         for (let result of results.data) {
             let resultLI = document.createElement('LI');
             let resultA = document.createElement('A');
@@ -68,18 +70,19 @@ class SearchResult {
                     resultPercent.classList += 'result-decrease';
                 }
             });
+            try {
+                let highlightSymbol = this.highlightSearchTerm(result.symbol, results.searchTerm);
+                let highlightName = this.highlightSearchTerm(result.name, results.searchTerm);
+                resultName.innerHTML = `${highlightSymbol} | ${highlightName}`;
 
-            let highlightSymbol = this.highlightSearchTerm(result.symbol, results.searchTerm);
-            let highlightName = this.highlightSearchTerm(result.name, results.searchTerm);
-            resultName.innerHTML = `${highlightSymbol} | ${highlightName}`;
-
-            resultLI.classList += 'result';
-            resultA.appendChild(resultIMG);
-            resultA.appendChild(resultName);
-            resultA.appendChild(resultPercent);
-            resultLI.appendChild(resultA);
-            this.resultsList.appendChild(resultLI);
+                resultLI.classList += 'result';
+                resultA.appendChild(resultIMG);
+                resultA.appendChild(resultName);
+                resultA.appendChild(resultPercent);
+                resultLI.appendChild(resultA);
+                this.resultsList.appendChild(resultLI);
+            } catch (e) {console.log(`Cannot load result: ${e}`)};
         }
-        this.resultsList.style.overflowY = 'scroll';
+        if (results.data.length > 4) this.resultsList.classList.add('enable-scroll');
     }
 }
