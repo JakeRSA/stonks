@@ -58,7 +58,6 @@ class SearchForm {
     }
 
     async search(searchTerm) {
-        console.log(searchTerm);
         this.spinner.style.display = 'inline-block';
         this.submitBtn.style.display = 'none';
         let data;
@@ -69,14 +68,15 @@ class SearchForm {
         }
         this.spinner.style.display = 'none';
         this.submitBtn.style.display = 'inline';
-        console.log(data[0]);
-        return data;
+        return {
+            data: data,
+            searchTerm: searchTerm
+        };
     }
 
     async onSearch(callback) {
         this.input.addEventListener('keyup', this.searchDebounce(async () => {
             let data = await this.search(this.input.value);
-            console.log(data);
             callback(data);
         }, 800))
     }

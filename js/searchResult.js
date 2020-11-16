@@ -28,15 +28,30 @@ class SearchResult {
         return response;
     }
 
+    highlightSearchTerm(string, searchTerm) {
+        let i = 0;
+        let termStart = 0;
+        let innerHTML = '';
+        while (i < string.length) {
+            termStart = string.toLowerCase().indexOf(searchTerm.toLowerCase(), i);
+            if (termStart === -1) {
+                innerHTML += string.slice(i);
+                break;
+            } else {
+                innerHTML += string.slice(i, termStart);
+                i = termStart;
+            }
+            innerHTML += `<p class='highlighted'>${string.slice(termStart, termStart + searchTerm.length)}</p>`
+            i += searchTerm.length;
+        }
+        return innerHTML;
+    }
+
     listResults(results) {
         this.resultsList.innerHTML = '';
 
-        if (!results) {
-            console.log('no data');
-            return 1;
-
-        }
-        for (let result of results) {
+        if (!results.data) return 1;
+        for (let result of results.data) {
             let resultLI = document.createElement('LI');
             let resultA = document.createElement('A');
             let resultIMG = document.createElement('IMG');
@@ -53,7 +68,10 @@ class SearchResult {
                     resultPercent.classList += 'result-decrease';
                 }
             });
-            resultName.innerText = `${result.symbol} | ${result.name}`;
+
+            let highlightSymbol = this.highlightSearchTerm(result.symbol, results.searchTerm);
+            let highlightName = this.highlightSearchTerm(result.name, results.searchTerm);
+            resultName.innerHTML = `${highlightSymbol} | ${highlightName}`;
 
             resultLI.classList += 'result';
             resultA.appendChild(resultIMG);
@@ -64,5 +82,4 @@ class SearchResult {
         }
         this.resultsList.style.overflowY = 'scroll';
     }
-
 }

@@ -25,14 +25,15 @@
 <script src='./js/searchResult.js'></script>
 
 <script>
-    const marquee = new Marquee(document.getElementById('marquee'));
-    marquee.load();
-    const form = new SearchForm(document.getElementById('searchWrapper'));
-    let formResults = new SearchResult(document.getElementById('searchWrapper'));
-
-    form.onSearch((companies) => {
-        formResults.listResults(companies);
-    })
+    (async function () {
+        const marquee = new Marquee(document.getElementById('marquee'));
+        marquee.load();
+        const form = new SearchForm(document.getElementById('searchWrapper'));
+        let formResults = new SearchResult(document.getElementById('searchWrapper'));
+        form.onSearch((companies) => {
+            formResults.listResults(companies);
+        })
+    })()
 </script>
 
 </html>
